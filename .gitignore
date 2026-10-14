@@ -1,0 +1,8 @@
+# secrets & local data
+backend/.env
+backend/.secret_key
+backend/credentials.json
+backend/*.db
+backend/.venv/
+__pycache__/
+.pytest_cache/

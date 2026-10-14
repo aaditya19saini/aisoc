@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f7f5;
+  --panel: #ffffff;
+  --border: #e6e5e0;
+  --text: #1c1c1a;
+  --muted: #6b6a65;
+  --accent: #2f5bd3;
+  --urgent: #c8312b;
+  --high: #c76a12;
+  --normal: #4b6a9b;
+  --low: #8a8984;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --panel: #1d1d1b;
+    --border: #2e2e2b;
+    --text: #ececea;
+    --muted: #9d9c97;
+    --accent: #7c9cf0;
+    --urgent: #f0716b;
+    --high: #f0a35c;
+    --normal: #8fb0e0;
+    --low: #85847f;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-urgent: var(--urgent);
+  --color-high: var(--high);
+  --color-normal: var(--normal);
+  --color-low: var(--low);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+@utility btn {
+  @apply inline-flex items-center gap-1.5 rounded-md border border-border bg-panel px-3 py-1.5 text-sm font-medium hover:border-muted disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn border-accent bg-accent text-white hover:opacity-90;
+}
+@utility input {
+  @apply w-full rounded-md border border-border bg-panel px-2.5 py-1.5 text-sm outline-none focus:border-accent;
+}
+@utility card {
+  @apply rounded-lg border border-border bg-panel;
+}

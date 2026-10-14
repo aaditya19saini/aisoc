@@ -1,0 +1,36 @@
+[project]
+name = "aicos-backend"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Aaditya Mahender Saini", email = "aaditya.m.saini@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "cryptography>=50.0.2",
+    "fastapi>=0.143.0",
+    "google-api-python-client>=2.201.0",
+    "google-auth>=2.62.0",
+    "google-auth-oauthlib>=1.5.0",
+    "litellm>=1.105.1",
+    "pydantic-settings>=2.15.0",
+    "sqlalchemy>=2.1.4",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[project.scripts]
+aicos-backend = "aicos_backend:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
